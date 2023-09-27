@@ -1,0 +1,88 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.parent {
+    display: flex;
+    /* flex-direction: column; */
+    /* flex-direction: row; * by default -> x-axis * */
+    flex-wrap: wrap;
+    align-items: center;
+    /***/
+    /* height: 1000px; */
+    border: 2px solid red;
+    /* justify-content: center; */
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: space-evenly; */
+
+
+    /* justify-content works in same axis**/
+}
+
+.children {
+    padding: 10px;
+    color: white;
+    height: 150px;
+    /* width: 150px; */
+    border: 2px solid blue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    flex-basis: 300px;
+}
+
+/* child selectors/ psuedo class */
+
+.children:nth-child(even) {
+    background-color: red;
+}
+
+.children:nth-child(odd) {
+    background-color: green;
+}
+
+/* .children:nth-child(3n +1) {
+    background-color: yellow;
+    flex-grow: 3;
+} */
+
+.children:nth-last-child(2n+3) {
+    background-color: aqua;
+}
+
+.footer {
+    height: 300px;
+    background-color: lightblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    /* 1rem = 16px */
+}
+
+.footer .icons {
+    display: flex;
+    gap: 4rem;
+}
+
+.footer>.icons>img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+}
+
+.footer>.icons>img:hover {
+    /* here also it works */
+    /* transition: all 0.5s ease-in-out; */
+    cursor: pointer;
+    scale: 1.3;
+}
